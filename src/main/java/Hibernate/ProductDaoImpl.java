@@ -2,14 +2,14 @@ package Hibernate;
 
 import org.h2.engine.User;
 import org.hibernate.*;
-
+import org.springframework.stereotype.Component;
 import java.util.List;
-
+@Component
 public class ProductDaoImpl implements ProductDao {
 
     SessionFactoryUtils sf = new SessionFactoryUtils();
 
-    ProductDaoImpl(SessionFactoryUtils sf) {
+ProductDaoImpl(SessionFactoryUtils sf) {
         this.sf = sf;
     }
 
@@ -27,7 +27,7 @@ public class ProductDaoImpl implements ProductDao {
     public List<Product> findAll() {
         Session session = sf.getSession();
         session.beginTransaction();
-        List<Product> p = session.createQuery("select p prom Product p ").getResultList();
+        List<Product> p = session.createQuery("select p from Product p ").getResultList();
         System.out.println(p);
         session.getTransaction().commit();
         return p;
