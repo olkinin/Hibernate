@@ -7,34 +7,24 @@ import javax.security.auth.login.Configuration;
 
 public class Main {
     public static void main(String[] args) {
-//       SessionFactoryUtils factory=new SessionFactoryUtils();
-//        factory.init();
-//                Session s=factory.getSession();
-//                try {
-//                ProductDao pd=new ProductDaoImpl(factory);
-//                pd.findById(2l);
-//                System.out.println(pd);
-//                System.out.println(pd.findAll());
-//                pd.saveOrUpdate(new Product("Orange",100));
-//                } catch (Exception e) {
-//                e.printStackTrace();
-//                }finally {
-//                factory.shotdown();
-//                }
-        SessionFactoryUtils factory=new SessionFactoryUtils();
+       SessionFactoryUtils factory=new SessionFactoryUtils();
         factory.init();
                 Session s=factory.getSession();
                 try {
-                BuyerDao bd=new BuyerDaoImpl(factory);
-                bd.findById(2l);
-//                System.out.println(pd);
-//                System.out.println(pd.findAll());
-//              //  pd.saveOrUpdate(new Product("Orange",100));
+                ProductDao pd=new ProductDaoImpl(factory);
+                pd.findById(2l);
+                System.out.println(pd);
+                System.out.println(pd.findAll());
+                pd.saveOrUpdate(new Product("Orange",100));
+                BuyerDao bd = new BuyerDaoImpl(factory);
+                bd.findById(2L);
+
                 } catch (Exception e) {
                 e.printStackTrace();
                 }finally {
                 factory.shotdown();
                 }
+
 
     }
 }
