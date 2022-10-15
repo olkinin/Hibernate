@@ -15,8 +15,6 @@ public class Main {
             System.out.println(pd);
             System.out.println(pd.findAll());
             pd.saveOrUpdate(new Product("Orange",100));
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
